@@ -195,3 +195,4 @@ ggplot(sales_region_data, aes(x = Month, y = Sales, fill = Region)) +
     y = "Sales"
   ) +
   theme_minimal()
+
