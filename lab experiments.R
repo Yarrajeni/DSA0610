@@ -1,5 +1,5 @@
 ############################################################################
-#1
+#EXPERIMENT1
 # Load necessary library
 library(ggplot2)
 
@@ -20,7 +20,7 @@ ggplot(weight_height_data, aes(x = Weight, y = Height)) +
   ) +
   theme_minimal()
 ############################################################################
-#2
+#EXPERIMENT2
 # Create a data frame
 # Load necessary library
 library(ggplot2)
@@ -42,7 +42,7 @@ ggplot(year_population_data, aes(x = Year, y = Population)) +
   ) +
   theme_minimal()
 ############################################################################
-#3
+#EXPERIMENT3
 # Load necessary library
 library(ggplot2)
 
@@ -62,7 +62,7 @@ ggplot(sales_data, aes(x = Product, y = Sales, fill = Product)) +
   ) +
   theme_minimal()
 ############################################################################
-#4
+#EXPERIMENT4
 # Load necessary library
 library(ggplot2)
 
@@ -86,7 +86,7 @@ ggplot(age_data, aes(x = Age)) +
   ) +
   theme_minimal()
 ############################################################################
-#5
+#EXPERIMENT5
 # Load necessary library
 library(ggplot2)
 
@@ -108,7 +108,7 @@ ggplot(market_share_data, aes(x = "", y = Market_Share, fill = Company)) +
   theme_void() +
   theme(legend.position = "right")
 ############################################################################
-#6
+#EXPERIMENT6
 # Load necessary library
 library(ggplot2)
 
@@ -128,7 +128,7 @@ ggplot(scores_data, aes(x = Class, y = Scores, fill = Class)) +
   ) +
   theme_minimal()
 ############################################################################
-#7
+#EXPERIMENT7
 # Load necessary library
 library(ggplot2)
 
@@ -147,7 +147,7 @@ ggplot(weights_data, aes(x = Weight)) +
   ) +
   theme_minimal()
 ############################################################################
-#8
+#EXPERIMENT8
 
 # Load necessary libraries
 library(ggplot2)
@@ -175,7 +175,7 @@ ggplot(melted_data, aes(x = Month, y = variable, fill = value)) +
   ) +
   theme_minimal()
 ############################################################################
-#9
+#EXPERIMENT9
 # Load necessary library
 library(ggplot2)
 
@@ -197,7 +197,7 @@ ggplot(sales_region_data, aes(x = Month, y = Sales, fill = Region)) +
   ) +
   theme_minimal()
 ############################################################################
-#11
+#EXPERIMENT11
 # Load required library
 library(ggplot2)
 
@@ -217,7 +217,7 @@ ggplot(revenue_data, aes(x = Year, y = Revenue)) +
   ) +
   theme_minimal()
 ############################################################################
-#12
+#EXPERIMENT12
 # Load required library
 library(ggplot2)
 
@@ -240,7 +240,7 @@ ggplot(cumulative_sales_data, aes(x = Month, y = Cumulative_Sales, group = 1)) +
   ) +
   theme_minimal()
 ############################################################################
-#13
+#EXPERIMENT13
 # Install ggridges if not already installed
 if (!require(ggridges)) {
   install.packages("ggridges")
@@ -266,7 +266,7 @@ ggplot(temperature_data, aes(x = Temperature, y = City, fill = City)) +
   ) +
   theme_minimal()
 ############################################################################
-#14
+#EXPERIMENT14
 # Load required library
 library(ggplot2)
 
@@ -293,7 +293,7 @@ ggplot(sales_campaign_data) +
   ) +
   theme_minimal()
 ############################################################################
-#15
+#EXPERIMENT15
 
 # Load required lib# Load required library
 library(ggplot2)
@@ -319,7 +319,7 @@ ggplot(sales_region_data, aes(x = Region, y = Sales)) +
   ) +
   theme_minimal()
 ############################################################################
-#16
+#EXPERIMENT16
 # Load required library
 library(ggplot2)
 
@@ -342,7 +342,7 @@ ggplot(sales_time_data, aes(x = Month, y = Sales, group = Product, color = Produ
   ) +
   theme_minimal()
 ############################################################################
-#17
+#EXPERIMENT17
 #Install waterfalls if not already installed
 if (!require(waterfalls)) {
   install.packages("waterfalls")
@@ -358,7 +358,7 @@ profit_loss_data <- data.frame(
 # Create waterfall plot
 waterfall(profit_loss_data, fill_by_sign = TRUE)
 ############################################################################
-#18
+#EXPERIMENT18
 # Install hexbin if not already installed
 if (!require(hexbin)) {
   install.packages("hexbin")
@@ -384,7 +384,8 @@ ggplot(xy_data, aes(x = X, y = Y)) +
   ) +
   theme_minimal()
 ############################################################################
-#19
+#EXPERIMENT19
+
 # Install circlize if not already installed
 if (!require(circlize)) {
   install.packages("circlize")
@@ -407,7 +408,7 @@ chordDiagram(chord_data)
 # Optional: clear after plotting
 circos.clear()
 ############################################################################
-#20
+#EXPERIMENT20
 # Load necessary libraries
 library(lubridate)
 library(ggplot2)
@@ -433,6 +434,7 @@ ggplot(activity_data, aes(x = Date, y = Count)) +
        x = "Date",
        y = "Count") +
   theme_minimal()
+
 
 
 
