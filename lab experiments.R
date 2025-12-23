@@ -1,3 +1,4 @@
+############################################################################
 #1
 # Load necessary library
 library(ggplot2)
@@ -18,7 +19,7 @@ ggplot(weight_height_data, aes(x = Weight, y = Height)) +
     y = "Height (cm)"
   ) +
   theme_minimal()
-##################################
+############################################################################
 #2
 # Create a data frame
 # Load necessary library
@@ -40,7 +41,7 @@ ggplot(year_population_data, aes(x = Year, y = Population)) +
     y = "Population (millions)"
   ) +
   theme_minimal()
-#################################
+############################################################################
 #3
 # Load necessary library
 library(ggplot2)
@@ -60,7 +61,7 @@ ggplot(sales_data, aes(x = Product, y = Sales, fill = Product)) +
     y = "Sales"
   ) +
   theme_minimal()
-#################################
+############################################################################
 #4
 # Load necessary library
 library(ggplot2)
@@ -84,7 +85,7 @@ ggplot(age_data, aes(x = Age)) +
     y = "Frequency"
   ) +
   theme_minimal()
-##################################
+############################################################################
 #5
 # Load necessary library
 library(ggplot2)
@@ -106,7 +107,7 @@ ggplot(market_share_data, aes(x = "", y = Market_Share, fill = Company)) +
   ) +
   theme_void() +
   theme(legend.position = "right")
-##################################################
+############################################################################
 #6
 # Load necessary library
 library(ggplot2)
@@ -126,7 +127,7 @@ ggplot(scores_data, aes(x = Class, y = Scores, fill = Class)) +
     y = "Scores"
   ) +
   theme_minimal()
-############################################
+############################################################################
 #7
 # Load necessary library
 library(ggplot2)
@@ -145,7 +146,7 @@ ggplot(weights_data, aes(x = Weight)) +
     y = "Density"
   ) +
   theme_minimal()
-#################################################
+############################################################################
 #8
 
 # Load necessary libraries
@@ -173,7 +174,7 @@ ggplot(melted_data, aes(x = Month, y = variable, fill = value)) +
     y = "City"
   ) +
   theme_minimal()
-#######################################################
+############################################################################
 #9
 # Load necessary library
 library(ggplot2)
@@ -195,4 +196,244 @@ ggplot(sales_region_data, aes(x = Month, y = Sales, fill = Region)) +
     y = "Sales"
   ) +
   theme_minimal()
+############################################################################
+#11
+# Load required library
+library(ggplot2)
+
+# Create the data frame
+revenue_data <- data.frame(
+  Year = 2015:2019,
+  Revenue = c(30, 35, 40, 45, 50)
+)
+
+# Create area plot
+ggplot(revenue_data, aes(x = Year, y = Revenue)) +
+  geom_area(fill = "skyblue", alpha = 0.5) +
+  labs(
+    title = "Yearly Revenue",
+    x = "Year",
+    y = "Revenue (in million)"
+  ) +
+  theme_minimal()
+############################################################################
+#12
+# Load required library
+library(ggplot2)
+
+# Create the data frame
+cumulative_sales_data <- data.frame(
+  Month = factor(
+    c("Jan", "Feb", "Mar", "Apr", "May"),
+    levels = c("Jan", "Feb", "Mar", "Apr", "May")
+  ),
+  Cumulative_Sales = c(100, 200, 300, 400, 500)
+)
+
+# Create step plot
+ggplot(cumulative_sales_data, aes(x = Month, y = Cumulative_Sales, group = 1)) +
+  geom_step(color = "blue", linewidth = 1) +
+  labs(
+    title = "Cumulative Sales Over Months",
+    x = "Month",
+    y = "Cumulative Sales"
+  ) +
+  theme_minimal()
+############################################################################
+#13
+# Install ggridges if not already installed
+if (!require(ggridges)) {
+  install.packages("ggridges")
+  library(ggridges)
+}
+
+# Load ggplot2
+library(ggplot2)
+
+# Create the data frame
+temperature_data <- data.frame(
+  City = c("City1", "City1", "City1", "City2", "City2", "City2"),
+  Temperature = c(20, 21, 19, 22, 23, 24)
+)
+
+# Create ridgeline plot
+ggplot(temperature_data, aes(x = Temperature, y = City, fill = City)) +
+  geom_density_ridges(alpha = 0.7) +
+  labs(
+    title = "Temperature Distributions",
+    x = "Temperature",
+    y = "City"
+  ) +
+  theme_minimal()
+############################################################################
+#14
+# Load required library
+library(ggplot2)
+
+# Create the data frame
+sales_campaign_data <- data.frame(
+  Product = c("A", "B", "C"),
+  Before = c(200, 300, 400),
+  After = c(250, 350, 450)
+)
+
+# Create dumbbell-style plot using ggplot2
+ggplot(sales_campaign_data) +
+  geom_segment(
+    aes(y = Product, yend = Product, x = Before, xend = After),
+    color = "gray",
+    linewidth = 1.5
+  ) +
+  geom_point(aes(x = Before, y = Product), color = "blue", size = 3) +
+  geom_point(aes(x = After, y = Product), color = "red", size = 3) +
+  labs(
+    title = "Sales Before and After Campaign",
+    x = "Sales",
+    y = "Product"
+  ) +
+  theme_minimal()
+############################################################################
+#15
+
+# Load required lib# Load required library
+library(ggplot2)
+
+# Create the data frame
+sales_region_data <- data.frame(
+  Region = c("North", "South", "East", "West"),
+  Sales = c(150, 200, 180, 210)
+)
+
+# Create lollipop plot
+ggplot(sales_region_data, aes(x = Region, y = Sales)) +
+  geom_segment(
+    aes(x = Region, xend = Region, y = 0, yend = Sales),
+    color = "gray",
+    linewidth = 1
+  ) +
+  geom_point(color = "blue", size = 5) +
+  labs(
+    title = "Sales by Region",
+    x = "Region",
+    y = "Sales"
+  ) +
+  theme_minimal()
+############################################################################
+#16
+# Load required library
+library(ggplot2)
+
+# Create the data frame
+sales_time_data <- data.frame(
+  Month = factor(c("Jan", "Feb", "Mar", "Jan", "Feb", "Mar"),
+                 levels = c("Jan", "Feb", "Mar")),
+  Product = c("A", "A", "A", "B", "B", "B"),
+  Sales = c(100, 150, 130, 120, 140, 160)
+)
+
+# Create spaghetti plot
+ggplot(sales_time_data, aes(x = Month, y = Sales, group = Product, color = Product)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Sales over Time by Product",
+    x = "Month",
+    y = "Sales"
+  ) +
+  theme_minimal()
+############################################################################
+#17
+#Install waterfalls if not already installed
+if (!require(waterfalls)) {
+  install.packages("waterfalls")
+  library(waterfalls)
+}
+
+# Create the data frame
+profit_loss_data <- data.frame(
+  labels = c("Jan", "Feb", "Mar", "Apr", "May"),
+  values = c(100, -20, 50, -10, 80)
+)
+
+# Create waterfall plot
+waterfall(profit_loss_data, fill_by_sign = TRUE)
+############################################################################
+#18
+# Install hexbin if not already installed
+if (!require(hexbin)) {
+  install.packages("hexbin")
+  library(hexbin)
+}
+
+# Load ggplot2
+library(ggplot2)
+
+# Create the data frame
+xy_data <- data.frame(
+  X = c(1, 2, 3, 4, 5, 6, 7, 8),
+  Y = c(2, 3, 4, 5, 6, 7, 8, 9)
+)
+
+# Create hexbin plot
+ggplot(xy_data, aes(x = X, y = Y)) +
+  geom_hex() +
+  labs(
+    title = "Hexbin Plot",
+    x = "X",
+    y = "Y"
+  ) +
+  theme_minimal()
+############################################################################
+#19
+# Install circlize if not already installed
+if (!require(circlize)) {
+  install.packages("circlize")
+  library(circlize)
+}
+
+# Create the data frame
+chord_data <- data.frame(
+  From = c("A", "A", "B", "B", "C"),
+  To   = c("B", "C", "C", "D", "D"),
+  Value = c(10, 20, 15, 25, 30)
+)
+
+# Clear any previous circular plots
+circos.clear()
+
+# Plot chord diagram
+chordDiagram(chord_data)
+
+# Optional: clear after plotting
+circos.clear()
+############################################################################
+#20
+# Load necessary libraries
+library(lubridate)
+library(ggplot2)
+
+# Create a data frame
+activity_data <- data.frame(
+  Date = as.Date(c("2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05")),
+  Count = c(10, 12, 15, 8, 20)
+)
+
+# Add weekday and week of year columns
+activity_data$Weekday <- wday(activity_data$Date, label = TRUE)  # Weekday labels
+activity_data$Week <- week(activity_data$Date)                   # Week of the year
+
+# View the updated data
+print(activity_data)
+
+# Plot counts by date
+ggplot(activity_data, aes(x = Date, y = Count)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "red", size = 3) +
+  labs(title = "Activity Count Over Time",
+       x = "Date",
+       y = "Count") +
+  theme_minimal()
+
+
+
 
