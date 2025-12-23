@@ -148,6 +148,26 @@ ggplot(weights_data, aes(x = Weight)) +
   theme_minimal()
 ############################################################################
 #EXPERIMENT8
+# Load library
+library(ggplot2)
+
+# Create the data frame
+scores_group_data <- data.frame(
+  Group = c("X", "X", "X", "X", "Y", "Y", "Y", "Y"),
+  Score = c(80, 85, 78, 92, 88, 76, 80, 84)
+)
+
+# Create violin plot
+ggplot(scores_group_data, aes(x = Group, y = Score, fill = Group)) +
+  geom_violin() +
+  labs(
+    title = "Scores by Group",
+    x = "Group",
+    y = "Score"
+  ) +
+  theme_minimal()
+############################################################################
+#EXPERIMENT9
 
 # Load necessary libraries
 library(ggplot2)
@@ -175,29 +195,7 @@ ggplot(melted_data, aes(x = Month, y = variable, fill = value)) +
   ) +
   theme_minimal()
 ############################################################################
-#EXPERIMENT9
-# Load necessary library
-library(ggplot2)
-
-# Create a data frame
-sales_region_data <- data.frame(
-  Month = c("Jan", "Jan", "Feb", "Feb", "Mar", "Mar"),
-  Region = c("East", "West", "East", "West", "East", "West"),
-  Sales = c(200, 150, 220, 170, 210, 160)
-)
-
-# Create facet bar plot
-ggplot(sales_region_data, aes(x = Month, y = Sales, fill = Region)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap(~ Region) +
-  labs(
-    title = "Sales by Month and Region",
-    x = "Month",
-    y = "Sales"
-  ) +
-  theme_minimal()
-############################################################################
-#EXPERIMENT9
+#EXPERIMENT10
 # Load necessary library
 library(ggplot2)
 
@@ -456,6 +454,7 @@ ggplot(activity_data, aes(x = Date, y = Count)) +
        x = "Date",
        y = "Count") +
   theme_minimal()
+
 
 
 
